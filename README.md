@@ -1,1 +1,1 @@
-# algo-trend
+# groovy.algo-trend
