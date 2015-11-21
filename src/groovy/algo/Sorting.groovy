@@ -32,4 +32,24 @@ class Sorting {
         }
     }
 
+    /**
+     * Worst case performance	    О(n2) comparisons, swaps
+     * Best case performance	    Ω(n)  comparisons, O(1) swaps
+     * Average case performance	    О(n2) comparisons, swaps
+     * Worst case space complexity	О(n)  total, O(1) auxiliary
+     *
+     */
+    static void insertion(int [] array) {
+        for (int i = 1; i < array.size(); i++) {
+            int j = i
+            while (j > 0 && array[j - 1] > array[j]) {
+                int temp = array[j - 1];
+                array[j - 1] = array[j]
+                array[j] = temp
+                j--
+            }
+        }
+
+    }
+
 }
