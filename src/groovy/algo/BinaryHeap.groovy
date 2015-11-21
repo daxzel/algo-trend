@@ -1,5 +1,15 @@
 package groovy.algo
 
+/**
+ * Created by Tsarevskiy
+ *
+ * 	        Average	 Worst
+ *  Space	O(n)	 O(n)
+ *  Search	O(n)	 O(n)
+ *  Insert	O(1)	 O(log n)
+ *  Delete	O(log n) O(log n)
+ *  Peek	O(1)	 O(1)
+ */
 class BinaryHeap {
     int size = 0
     int height = 0

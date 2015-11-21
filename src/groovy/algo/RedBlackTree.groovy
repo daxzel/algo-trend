@@ -1,7 +1,13 @@
 package groovy.algo
 
 /**
- * Created by tsarevskiy on 18/11/15.
+ * Created by Tsarevskiy
+ *
+ *         Average	    Worst
+ *Space	    O(n)	    O(n)
+ *Search	O(log n)	O(log n)
+ *Insert	O(log n)    O(log n)
+ *Delete	O(log n)	O(log n)
  */
 class RedBlackTree {
 

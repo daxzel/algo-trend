@@ -1,7 +1,7 @@
 package groovy.algo
 
 /**
- * Created by tsarevskiy on 17/11/15.
+ * Created by Tsarevskiy
  */
 class HeapTestCase extends GroovyTestCase {
 
