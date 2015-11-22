@@ -12,17 +12,15 @@ class Sorting {
      * Worst case space complexity	O(1) auxiliary
      *
      */
-    static void bubble(int [] array) {
+    static void bubble(int[] array) {
 
         boolean swapped
-        while(true) {
+        while (true) {
             swapped = false;
             for (int i = 0; i < array.size() - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     int next = i + 1
-                    int temp = array[i]
-                    array[i] = array[next]
-                    array[next] = temp
+                    swap(array, i, next)
                     swapped = true
                 }
             }
@@ -39,17 +37,42 @@ class Sorting {
      * Worst case space complexity	О(n)  total, O(1) auxiliary
      *
      */
-    static void insertion(int [] array) {
+    static void insertion(int[] array) {
         for (int i = 1; i < array.size(); i++) {
             int j = i
             while (j > 0 && array[j - 1] > array[j]) {
-                int temp = array[j - 1];
-                array[j - 1] = array[j]
-                array[j] = temp
+                swap(array, j, j - 1)
                 j--
             }
         }
 
+    }
+
+    /**
+     * Worst case performance	    О(n2)
+     * Best case performance	    О(n2)
+     * Average case performance	    О(n2)
+     * Worst case space complexity	О(n) total, O(1) auxiliary
+     */
+    static void selection(int[] array) {
+        for (int i = 0; i < array.size(); i++) {
+            int jmin = i
+            for (int j = i + 1; j < array.size(); j++) {
+                if (array[jmin] > array[j]) {
+                    jmin = j
+                }
+            }
+            if (jmin != i) {
+                swap(array, i, jmin)
+            }
+        }
+
+    }
+
+    private static void swap(int[] array, int i, int j) {
+        int temp = array[j];
+        array[j] = array[i]
+        array[i] = temp
     }
 
 }
