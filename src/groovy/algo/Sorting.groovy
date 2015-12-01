@@ -5,6 +5,9 @@ package groovy.algo
  */
 class Sorting {
 
+
+
+
     /**
      * Worst case performance	    O(n^2)
      * Best case performance	    O(n)
@@ -31,9 +34,9 @@ class Sorting {
     }
 
     /**
-     * Worst case performance	    О(n2) comparisons, swaps
+     * Worst case performance	    О(n^2) comparisons, swaps
      * Best case performance	    Ω(n)  comparisons, O(1) swaps
-     * Average case performance	    О(n2) comparisons, swaps
+     * Average case performance	    О(n^2) comparisons, swaps
      * Worst case space complexity	О(n)  total, O(1) auxiliary
      *
      */
