@@ -9,7 +9,9 @@ Sorting:
   * SelectionSort
   * MergeSort
   * HeapSort
+
 Tree:
   * RedBlackTree
+
 Others:
   * BinaryHeap
