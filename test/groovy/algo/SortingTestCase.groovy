@@ -1,9 +1,12 @@
 package groovy.algo
 
+import groovy.algo.sorting.HeapSort
+import groovy.algo.sorting.MergeSort
+
 /**
  * Created by Tsarevskiy
  */
-class SortingTestCases extends GroovyTestCase {
+class SortingTestCase extends GroovyTestCase {
 
     void testBubbleSort() {
         int[] array = [5,2,3,6,3,2,4,10,2,3,5,3,4,7,8,60]

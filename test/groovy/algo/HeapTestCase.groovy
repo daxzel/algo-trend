@@ -1,5 +1,7 @@
 package groovy.algo
 
+import groovy.algo.sorting.BinaryHeap
+
 /**
  * Created by Tsarevskiy
  */
