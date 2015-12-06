@@ -1,10 +1,9 @@
-package groovy.algo
+package groovy.algo.sorting
 
 /**
  * Created by Tsarevskiy
  */
 class Sorting {
-
 
 
 

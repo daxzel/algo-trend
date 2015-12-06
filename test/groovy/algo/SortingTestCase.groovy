@@ -2,6 +2,7 @@ package groovy.algo
 
 import groovy.algo.sorting.HeapSort
 import groovy.algo.sorting.MergeSort
+import groovy.algo.sorting.Sorting
 
 /**
  * Created by Tsarevskiy

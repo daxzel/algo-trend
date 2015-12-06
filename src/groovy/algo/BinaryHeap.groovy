@@ -1,4 +1,4 @@
-package groovy.algo.sorting
+package groovy.algo
 
 /**
  * Created by Tsarevskiy
