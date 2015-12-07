@@ -8,6 +8,10 @@ import java.util.*;
  */
 public class Dijkstra {
 
+    /**
+     * Dijkstra's original algorithm does not use a min-priority queue and runs in time O(|V|^2)
+     * (where |V| is the number of nodes).
+     */
     public static Deque<Graph.Node> returnMinDistance(Graph graph, Graph.Node from, Graph.Node to) {
         Set<Graph.Node> unvisited = new HashSet<>();
 

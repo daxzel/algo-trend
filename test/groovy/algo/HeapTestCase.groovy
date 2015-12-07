@@ -4,7 +4,7 @@ package groovy.algo
  */
 class HeapTestCase extends GroovyTestCase {
 
-    void testAdding() {
+    void testBinaryHeapAdding() {
         BinaryHeap heap = new BinaryHeap()
 
         heap.add(232, "232")
@@ -21,4 +21,25 @@ class HeapTestCase extends GroovyTestCase {
         assertEquals(heap.remove(), "2")
 
     }
+
+    void testFibonacciHeapAdding() {
+        FibonacciHeap heap = new FibonacciHeap()
+
+        heap.add(232)
+        heap.add(2)
+        heap.add(23)
+        heap.add(29932)
+        heap.add(23992)
+
+        assertEquals(heap.remove(), 2)
+        assertEquals(heap.remove(), 23)
+        assertEquals(heap.remove(), 232)
+        assertEquals(heap.remove(), 23992)
+
+        assertEquals(heap.remove(), 29932)
+
+
+    }
+
+
 }
