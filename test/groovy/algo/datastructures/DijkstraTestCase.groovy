@@ -1,6 +1,6 @@
 package algo.datastructures
 
-import groovy.algo.graphs.Dijkstra
+import algo.algorithms.graphs.Dijkstra
 import algo.datastructures.graphs.Graph
 
 /**

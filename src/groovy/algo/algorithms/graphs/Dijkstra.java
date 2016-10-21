@@ -1,5 +1,7 @@
-package groovy.algo.graphs;
+package algo.algorithms.graphs;
 
+
+import algo.datastructures.graphs.Graph;
 
 import java.util.*;
 
@@ -18,7 +20,7 @@ public class Dijkstra {
         Map<Graph.Node, Integer> dist = new HashMap<>();
         Map<Graph.Node, Graph.Node> prev = new HashMap<>();
 
-        graph.getNodes().stream().forEach(node -> {
+        graph.getNodes().forEach(node -> {
             dist.put(node, Integer.MAX_VALUE);
             unvisited.add(node);
         });
