@@ -1,4 +1,4 @@
-package groovy.algo.algorithms;
+package algo.other;
 
 /**
  * Created by Tsarevskiy

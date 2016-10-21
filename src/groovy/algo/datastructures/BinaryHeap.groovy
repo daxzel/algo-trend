@@ -1,4 +1,4 @@
-package groovy.algo
+package algo.datastructures
 
 /**
  * Created by Tsarevskiy

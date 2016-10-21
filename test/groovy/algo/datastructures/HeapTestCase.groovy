@@ -1,4 +1,4 @@
-package groovy.algo
+package algo.datastructures
 /**
  * Created by Tsarevskiy
  */
@@ -31,12 +31,12 @@ class HeapTestCase extends GroovyTestCase {
         heap.add(29932)
         heap.add(23992)
 
-        assertEquals(heap.remove(), 2)
-        assertEquals(heap.remove(), 23)
-        assertEquals(heap.remove(), 232)
-        assertEquals(heap.remove(), 23992)
+        GroovyTestCase.assertEquals(heap.remove(), 2)
+        GroovyTestCase.assertEquals(heap.remove(), 23)
+        GroovyTestCase.assertEquals(heap.remove(), 232)
+        GroovyTestCase.assertEquals(heap.remove(), 23992)
 
-        assertEquals(heap.remove(), 29932)
+        GroovyTestCase.assertEquals(heap.remove(), 29932)
 
 
     }

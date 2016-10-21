@@ -1,7 +1,7 @@
-package groovy.algo
+package algo.datastructures
 
 import groovy.algo.graphs.Dijkstra
-import groovy.algo.graphs.Graph
+import algo.datastructures.graphs.Graph
 
 /**
  * Created by Tsarevskiy

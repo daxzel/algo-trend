@@ -1,4 +1,4 @@
-package groovy.algo;
+package algo.datastructures;
 
 import java.util.ArrayList;
 import java.util.List;

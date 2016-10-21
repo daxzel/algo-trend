@@ -1,4 +1,4 @@
-package groovy.algo
+package algo.algorithms
 
 import groovy.algo.sorting.HeapSort
 import groovy.algo.sorting.MergeSort
