@@ -2,7 +2,6 @@ package algo.others.cci;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.StringJoiner;
 
 /**
  * Created by andrey tsarevskiy
@@ -12,7 +11,7 @@ public class ArrayAndStrings {
     /**
      * If a string has unique characters
      */
-    public static boolean uniqueCharacters(String s) {
+    public static boolean question1(String s) {
         HashSet<Character> uniqueness = new HashSet<>();
 
         for (int i = 0; i < s.length(); i++) {
@@ -29,7 +28,7 @@ public class ArrayAndStrings {
     /**
      * If a string has unique characters. An implementation without additional memmory
      */
-    public static boolean uniqueCharactersWithoutMemmory(String s) {
+    public static boolean question1_2(String s) {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             for (int j = i + 1; j < s.length(); j++) {
@@ -77,5 +76,31 @@ public class ArrayAndStrings {
         return str;
     }
 
+
+    /**
+     * Rotate image 90 degrees
+     */
+    public static void question6(int[][] matrix, int n) {
+        for (int layer = 0; layer < n / 2; ++layer) {
+            int first = layer;
+            int last = n - 1 - layer;
+            for(int i = first; i < last; ++i) {
+                int offset = i - first;
+                int top = matrix[first][i]; // save top
+
+                // left -> top
+                matrix[first][i] = matrix[last-offset][first];
+
+                // bottom -> left
+                matrix[last-offset][first] = matrix[last][last - offset];
+
+                // right -> bottom
+                matrix[last][last - offset] = matrix[i][last];
+
+                // top -> right
+                matrix[i][last] = top; // right <- saved top
+            }
+        }
+    }
 
 }

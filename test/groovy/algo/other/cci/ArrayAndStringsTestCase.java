@@ -3,6 +3,8 @@ package algo.other.cci;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static algo.others.cci.ArrayAndStrings.*;
 
 /**
@@ -12,15 +14,15 @@ public class ArrayAndStringsTestCase extends Assert {
 
     @Test
     public void testUniqueCharacters() {
-        assertTrue(uniqueCharacters("abc"));
-        assertFalse(uniqueCharacters("aba"));
-        assertFalse(uniqueCharacters("abcdlpqowc"));
-        assertTrue(uniqueCharacters("bcdlpqowa"));
+        assertTrue(question1("abc"));
+        assertFalse(question1("aba"));
+        assertFalse(question1("abcdlpqowc"));
+        assertTrue(question1("bcdlpqowa"));
 
-        assertTrue(uniqueCharactersWithoutMemmory("abc"));
-        assertFalse(uniqueCharactersWithoutMemmory("aba"));
-        assertFalse(uniqueCharactersWithoutMemmory("abcdlpqowc"));
-        assertTrue(uniqueCharactersWithoutMemmory("bcdlpqowa"));
+        assertTrue(question1_2("abc"));
+        assertFalse(question1_2("aba"));
+        assertFalse(question1_2("abcdlpqowc"));
+        assertTrue(question1_2("bcdlpqowa"));
     }
 
     @Test
@@ -37,6 +39,24 @@ public class ArrayAndStringsTestCase extends Assert {
             arr[i] = str.charAt(i);
         }
         assertEquals(new String(replaceSpaces(arr, str.length())), "abc%20d%20e%20f");
+    }
+
+    @Test
+    public void rotateMatrix() {
+        int[][] test = {
+                {1, 2, 3, 4},
+                {1, 1, 1, 1},
+                {1, 3, 3, 3},
+                {4, 4, 4, 4},
+        };
+        int[][] result = {
+                {4, 1, 1, 1},
+                {4, 3, 1, 2},
+                {4, 3, 1, 3},
+                {4, 3, 1, 4},
+        };
+        question6(test, 4);
+        assertTrue(Arrays.deepEquals(test, result));
     }
 }
 
