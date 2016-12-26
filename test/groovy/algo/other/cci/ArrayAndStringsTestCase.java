@@ -3,12 +3,10 @@ package algo.other.cci;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static algo.others.cci.ArrayAndStrings.isPermutation;
-import static algo.others.cci.ArrayAndStrings.uniqueCharacters;
-import static algo.others.cci.ArrayAndStrings.uniqueCharactersWithoutMemmory;
+import static algo.others.cci.ArrayAndStrings.*;
 
 /**
- * Created by andreytsarevskiy on 26/12/16.
+ * Created by andrey tsarevskiy
  */
 public class ArrayAndStringsTestCase extends Assert {
 
@@ -29,6 +27,16 @@ public class ArrayAndStringsTestCase extends Assert {
     public void testIsStringsArePermutations() {
         assertTrue(isPermutation("abc", "bca"));
         assertFalse(isPermutation("abc2", "bca"));
+    }
+
+    @Test
+    public void testSpaceReplace() {
+        String str = "abc d e f";
+        char[] arr = new char[str.length() + 3 * 2];
+        for (int i = 0; i < str.length(); i++) {
+            arr[i] = str.charAt(i);
+        }
+        assertEquals(new String(replaceSpaces(arr, str.length())), "abc%20d%20e%20f");
     }
 }
 
