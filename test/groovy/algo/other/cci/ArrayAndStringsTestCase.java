@@ -58,5 +58,12 @@ public class ArrayAndStringsTestCase extends Assert {
         question6(test, 4);
         assertTrue(Arrays.deepEquals(test, result));
     }
+
+    @Test
+    public void testIsRotation() {
+        assertTrue(question8("test", "stte"));
+        assertFalse(question8("test", "test"));
+        assertFalse(question8("test", "sdfdsfsdfsd"));
+    }
 }
 

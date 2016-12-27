@@ -103,4 +103,18 @@ public class ArrayAndStrings {
         }
     }
 
+    /**
+     * Is rotation?
+     */
+    public static boolean question8(String s1, String s2) {
+        if (s1.equals(s2)) {
+            return false;
+        }
+        if (s1.length() == s2.length()) {
+            String concat = s1 + s1;
+            return concat.contains(s2);
+        }
+        return false;
+    }
+
 }
