@@ -67,4 +67,34 @@ public class LinkedLists {
         }
     }
 
+
+
+    /**
+     * Find Kth element to the last
+     */
+    public static int question2(LinkedListNode node, int k) {
+        int count = 0;
+        LinkedListNode current = node;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        count -= k;
+        current = node;
+        while (count > 0) {
+            count--;
+            current = current.next;
+        }
+        return current.data;
+    }
+
+    /**
+     * Remove current node
+     */
+    public static void question3(LinkedListNode node) {
+        node.data = node.next.data;
+        node.next = node.next.next;
+    }
+
+
 }
