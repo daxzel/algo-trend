@@ -96,5 +96,61 @@ public class LinkedLists {
         node.next = node.next.next;
     }
 
+    /**
+     * Linked represents a number. Implement sum
+     */
+    public static void question5(LinkedListNode node, int a) {
+
+        while(a > 0 && node != null) {
+            int b = node.data;
+            node.data = (a + b) % 10;
+            a = (a + b) / 10;
+            if (node.next == null && a > 0) {
+                node.next = new LinkedListNode(a);
+                node = null;
+            } else {
+                node = node.next;
+            }
+        }
+    }
+
+    /**
+     * Linked represents a number. Implement sum
+     */
+    public static LinkedListNode question6(LinkedListNode node) {
+
+        LinkedListNode slow = node;
+        LinkedListNode fast = node;
+
+        // Find meeting point
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                break;
+            }
+        }
+
+        // Error check - there is no meeting point, and therefore no loop
+        if (fast == null || fast.next == null) {
+            return null;
+        }
+
+		/* Move slow to Head. Keep fast at Meeting Point. Each are k steps
+		/* from the Loop Start. If they move at the same pace, they must
+		 * meet at Loop Start. */
+        slow = node;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // Both now point to the start of the loop.
+        return fast;
+    }
+
+
+
+
 
 }

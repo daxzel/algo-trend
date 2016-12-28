@@ -62,4 +62,36 @@ public class LinkedListsTestCase extends Assert {
         assertEquals((long)head.next.data, 2);
     }
 
+    @Test
+    public void testSum() {
+        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(9);
+        LinkedLists.LinkedListNode second = new LinkedLists.LinkedListNode(9);
+        head.next = second;
+        question5(head, 1);
+        assertEquals((long)head.data, 0);
+        assertEquals((long)head.next.data, 0);
+        assertEquals((long)head.next.next.data, 1);
+    }
+
+    @Test
+    public void testLoops() {
+        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(9);
+        LinkedLists.LinkedListNode n2 = new LinkedLists.LinkedListNode(9);
+        LinkedLists.LinkedListNode n3 = new LinkedLists.LinkedListNode(2);
+        LinkedLists.LinkedListNode n4 = new LinkedLists.LinkedListNode(1);
+        LinkedLists.LinkedListNode n5 = new LinkedLists.LinkedListNode(5);
+        LinkedLists.LinkedListNode n6 = new LinkedLists.LinkedListNode(3);
+
+        head.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        n5.next = n6;
+        n6.next = n4;
+
+        question6(head);
+        assertEquals((long)question6(head).data, 1);
+    }
+
+
 }
