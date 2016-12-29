@@ -21,7 +21,7 @@ public class GraphTreeTestCase extends Assert {
         head.right = right;
         left.right = leftRight;
 
-        assertFalse(GraphTree.question5(head));
+        assertFalse(GraphTree.question5_2(head));
     }
 
 
@@ -36,6 +36,20 @@ public class GraphTreeTestCase extends Assert {
         head.right = right;
         left.right = leftRight;
 
-        assertTrue(GraphTree.question5(head));
+        assertTrue(GraphTree.question5_2(head));
+    }
+
+    @Test
+    public void checkWhetherTreeIsBinarySearch3() {
+        SimpleTreeElement head = new SimpleTreeElement(5);
+        SimpleTreeElement left = new SimpleTreeElement(2);
+        SimpleTreeElement right = new SimpleTreeElement(5);
+        SimpleTreeElement leftRight = new SimpleTreeElement(3);
+
+        head.left = left;
+        head.right = right;
+        left.right = leftRight;
+
+        assertFalse(GraphTree.question5_2(head));
     }
 }
