@@ -5,8 +5,6 @@ package groovy.algo.sorting
  */
 class Sorting {
 
-
-
     /**
      * Worst case performance	    O(n^2)
      * Best case performance	    O(n)
@@ -77,4 +75,32 @@ class Sorting {
         array[i] = temp
     }
 
+    /**
+     * Worst case performance	    О(n)
+     * Best case performance	    О(n)
+     * Average case performance	    О(n)
+     */
+    static void counting(int[] array) {
+        ArrayList<LinkedList<Integer>> buckets = new ArrayList<>()
+
+        (0..1000).each {
+            buckets.add(null)
+        }
+
+        array.each {
+            if (!buckets.get(it)) {
+                buckets.set(it, new LinkedList<Integer>())
+            }
+            buckets.get(it).add(it)
+        }
+        int i = 0
+        buckets.forEach { bucket ->
+            if (bucket) {
+                bucket.each {
+                    array[i] = it
+                    i++
+                }
+            }
+        }
+    }
 }
