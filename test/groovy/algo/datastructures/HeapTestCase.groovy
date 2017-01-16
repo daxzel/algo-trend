@@ -1,4 +1,8 @@
 package algo.datastructures
+
+import algo.datastructures.heap.BinaryHeap
+import algo.datastructures.heap.FibonacciHeap
+
 /**
  * Created by Tsarevskiy
  */
