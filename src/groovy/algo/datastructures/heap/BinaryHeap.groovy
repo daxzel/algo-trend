@@ -1,4 +1,4 @@
-package algo.datastructures
+package algo.datastructures.heap
 
 /**
  * Created by Tsarevskiy

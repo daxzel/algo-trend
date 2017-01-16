@@ -1,4 +1,4 @@
-package algo.datastructures;
+package algo.datastructures.heap;
 
 import java.util.ArrayList;
 import java.util.List;
