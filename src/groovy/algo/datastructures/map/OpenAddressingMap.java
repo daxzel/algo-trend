@@ -2,7 +2,7 @@ package algo.datastructures.map;
 
 import java.util.Arrays;
 
-import static algo.algorithms.hash.SimpleHash.getDoubleHash;
+import static algo.algorithm.hash.SimpleHash.getDoubleHash;
 
 /**
  * Created by andrey tsarevskiy
