@@ -1,6 +1,7 @@
 package algo.puzzles.cci;
 
 import algo.datastructures.tree.SimpleTree;
+import algo.puzzles.tree.CheckBinarySearchTree;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class GraphTreeTestCase extends Assert {
         head.right = right;
         left.right = leftRight;
 
-        assertFalse(GraphTree.question5_2(head));
+        assertFalse(CheckBinarySearchTree.secondMethod(head));
     }
 
 
@@ -35,7 +36,7 @@ public class GraphTreeTestCase extends Assert {
         head.right = right;
         left.right = leftRight;
 
-        assertTrue(GraphTree.question5_2(head));
+        assertTrue(CheckBinarySearchTree.secondMethod(head));
     }
 
     @Test
@@ -49,6 +50,6 @@ public class GraphTreeTestCase extends Assert {
         head.right = right;
         left.right = leftRight;
 
-        assertFalse(GraphTree.question5_2(head));
+        assertFalse(CheckBinarySearchTree.secondMethod(head));
     }
 }

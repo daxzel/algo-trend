@@ -1,6 +1,8 @@
 package algo.puzzles.cci;
 
 import algo.puzzles.array.ArrayRotation;
+import algo.puzzles.string.ReplaceSpaces;
+import algo.puzzles.string.StringsRotation;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -39,7 +41,7 @@ public class ArrayAndStringsTestCase extends Assert {
         for (int i = 0; i < str.length(); i++) {
             arr[i] = str.charAt(i);
         }
-        assertEquals(new String(replaceSpaces(arr, str.length())), "abc%20d%20e%20f");
+        assertEquals(new String(ReplaceSpaces.replaceSpaces(arr, str.length())), "abc%20d%20e%20f");
     }
 
     @Test
@@ -62,9 +64,9 @@ public class ArrayAndStringsTestCase extends Assert {
 
     @Test
     public void testIsRotation() {
-        assertTrue(question8("test", "stte"));
-        assertFalse(question8("test", "test"));
-        assertFalse(question8("test", "sdfdsfsdfsd"));
+        assertTrue(StringsRotation.isRotation("test", "stte"));
+        assertFalse(StringsRotation.isRotation("test", "test"));
+        assertFalse(StringsRotation.isRotation("test", "sdfdsfsdfsd"));
     }
 }
 
