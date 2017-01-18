@@ -53,6 +53,9 @@ class T360 {
     }
 
     class LineIntersection {
+        /**
+         * Check whether lines intersect or not
+         */
         static boolean isLineIntersect(int K, int L, int M, int N, int P, int Q, int R, int S) {
             return simpleCase(K, M, P, R) &&
                     simpleCase(L, N, Q, S) &&

@@ -1,4 +1,4 @@
-package algo.datastructures.graphs
+package algo.datastructures.graph
 
 /**
  * Created by Tsarevskiy

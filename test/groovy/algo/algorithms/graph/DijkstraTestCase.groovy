@@ -1,7 +1,7 @@
-package algo.datastructures
+package algo.algorithms.graph
 
-import algo.algorithms.graphs.Dijkstra
-import algo.datastructures.graphs.Graph
+import algo.algorithms.graph.Dijkstra
+import algo.datastructures.graph.Graph
 
 /**
  * Created by Tsarevskiy

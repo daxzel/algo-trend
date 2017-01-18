@@ -1,4 +1,4 @@
-package algo.datastructures
+package algo.datastructures.tree
 
 import algo.datastructures.tree.RedBlackTree
 

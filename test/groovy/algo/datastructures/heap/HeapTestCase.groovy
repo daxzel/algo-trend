@@ -1,4 +1,4 @@
-package algo.datastructures
+package algo.datastructures.heap
 
 import algo.datastructures.heap.BinaryHeap
 import algo.datastructures.heap.FibonacciHeap

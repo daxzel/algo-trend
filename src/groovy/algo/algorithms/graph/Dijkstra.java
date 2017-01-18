@@ -1,7 +1,7 @@
-package algo.algorithms.graphs;
+package algo.algorithms.graph;
 
 
-import algo.datastructures.graphs.Graph;
+import algo.datastructures.graph.Graph;
 
 import java.util.*;
 
