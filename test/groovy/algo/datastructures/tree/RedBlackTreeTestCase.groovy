@@ -1,7 +1,4 @@
 package algo.datastructures.tree
-
-import algo.datastructures.tree.RedBlackTree
-
 /**
  * Created by Tsarevskiy
  */
