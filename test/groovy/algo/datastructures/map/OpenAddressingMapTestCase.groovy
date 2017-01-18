@@ -23,4 +23,30 @@ class OpenAddressingMapTestCase extends GroovyTestCase {
         assertEquals(map.get(2342342), 255)
         assertEquals(map.get(123), 255)
     }
+
+    void testSimpleRemoving() {
+        OpenAddressingMap map = new OpenAddressingMap()
+        map.put(23423, 11)
+        map.put(12, 23423)
+        map.put(423, 5675)
+        Integer removed = map.remove(423)
+
+        assertNotNull(map.get(23423))
+        assertNull(map.get(432))
+        assertEquals(removed, 5675)
+    }
+
+
+    void testResize() {
+        OpenAddressingMap map = new OpenAddressingMap()
+        for (int i = 0; i < 10000; i++) {
+            map.put(i, 10000 - i);
+        }
+        for (int i = 0; i < 10000; i++) {
+            map.put(i, 10000 - i);
+            assertEquals(map.get(i), 10000 - i)
+        }
+    }
+
+
 }
