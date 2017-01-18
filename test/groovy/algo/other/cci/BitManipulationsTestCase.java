@@ -1,6 +1,5 @@
 package algo.other.cci;
 
-import algo.others.cci.BitManipulations;
 import org.junit.Assert;
 import org.junit.Test;
 

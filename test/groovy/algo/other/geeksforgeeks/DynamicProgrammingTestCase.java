@@ -1,6 +1,5 @@
 package algo.other.geeksforgeeks;
 
-import algo.others.geeksforgeeks.DynamicProgramming;
 import org.junit.Assert;
 import org.junit.Test;
 

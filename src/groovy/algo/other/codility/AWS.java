@@ -18,7 +18,7 @@ public class AWS {
         double prevMin = A[0];
         double result = A[0];
 
-        for(int i = 1; i < A.length; i++) {
+        for (int i = 1; i < A.length; i++) {
 
             maxCurrent = Math.max(Math.max(prevMax * A[i], prevMin * A[i]), A[i]);
             prevMin = Math.min(Math.min(prevMax * A[i], prevMin * A[i]), A[i]);

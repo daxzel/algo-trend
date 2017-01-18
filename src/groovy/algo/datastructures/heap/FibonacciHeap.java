@@ -40,8 +40,7 @@ public class FibonacciHeap {
 
         if (min.right == min) {
             min = null;
-        }
-        else {
+        } else {
             remove(min);
             min = min.right;
         }

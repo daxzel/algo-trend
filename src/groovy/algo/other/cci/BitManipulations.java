@@ -1,4 +1,4 @@
-package algo.others.cci;
+package algo.other.cci;
 
 
 /**
@@ -13,7 +13,7 @@ public class BitManipulations {
 
         int allOnes = ~0;
 
-        int left = ~(allOnes << i );
+        int left = ~(allOnes << i);
         int right = allOnes << j + 1;
         int mask = left | right;
 

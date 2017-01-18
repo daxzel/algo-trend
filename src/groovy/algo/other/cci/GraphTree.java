@@ -1,6 +1,6 @@
-package algo.others.cci;
+package algo.other.cci;
 
-import algo.datastructures.SimpleTreeElement;
+import algo.datastructures.tree.SimpleTree;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -13,7 +13,7 @@ public class GraphTree {
 //    /**
 //     * Check whether tree is binary search
 //     */
-//    public static boolean question5_2(SimpleTreeElement treeHead) {
+//    public static boolean question5_2(SimpleTree treeHead) {
 //        if (treeHead == null) {
 //            return true;
 //        }
@@ -32,7 +32,7 @@ public class GraphTree {
     /**
      * Check whether tree is binary search
      */
-    public static boolean question5_1(SimpleTreeElement treeHead) {
+    public static boolean question5_1(SimpleTree treeHead) {
 
         LinkedList<Integer> list = new LinkedList<>();
         q5DeepSearch(treeHead, list);
@@ -51,7 +51,7 @@ public class GraphTree {
     /**
      * Check whether tree is binary search
      */
-    public static void q5DeepSearch(SimpleTreeElement treeHead, LinkedList<Integer> linkedList) {
+    public static void q5DeepSearch(SimpleTree treeHead, LinkedList<Integer> linkedList) {
         if (treeHead.left != null) {
             q5DeepSearch(treeHead.left, linkedList);
         }
@@ -64,7 +64,7 @@ public class GraphTree {
     /**
      * Check whether tree is binary search, min max approach
      */
-    public static boolean question5_2(SimpleTreeElement treeHead) {
+    public static boolean question5_2(SimpleTree treeHead) {
         return q5_2DeepSearch(treeHead, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
@@ -72,7 +72,7 @@ public class GraphTree {
     /**
      * Check whether tree is binary search
      */
-    public static boolean q5_2DeepSearch(SimpleTreeElement treeHead, int min, int max) {
+    public static boolean q5_2DeepSearch(SimpleTree treeHead, int min, int max) {
         if (treeHead == null) {
             return true;
         }

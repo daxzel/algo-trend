@@ -1,4 +1,4 @@
-package algo.others.geeksforgeeks;
+package algo.other.geeksforgeeks;
 
 /**
  * Created by andrey tsarevskiy

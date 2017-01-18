@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static algo.others.cci.ArrayAndStrings.*;
+import static algo.other.cci.ArrayAndStrings.*;
 
 /**
  * Created by andrey tsarevskiy

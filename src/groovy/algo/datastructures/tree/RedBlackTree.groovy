@@ -1,13 +1,13 @@
-package algo.datastructures
+package algo.datastructures.tree
 
 /**
  * Created by Tsarevskiy
  *
  *         Average	    Worst
- *Space	    O(n)	    O(n)
- *Search	O(log n)	O(log n)
- *Insert	O(log n)    O(log n)
- *Delete	O(log n)	O(log n)
+ * Space	    O(n)	    O(n)
+ * Search	O(log n)	O(log n)
+ * Insert	O(log n)    O(log n)
+ * Delete	O(log n)	O(log n)
  */
 class RedBlackTree {
 
@@ -493,13 +493,12 @@ class RedBlackTree {
     }
 
     private static Element leftOf(Element p) {
-        return (p == null) ? null: p.left;
+        return (p == null) ? null : p.left;
     }
 
     private static Element rightOf(Element p) {
-        return (p == null) ? null: p.right;
+        return (p == null) ? null : p.right;
     }
-
 
 
 }

@@ -16,6 +16,7 @@ class Graph {
         Node left
         Node right
         Integer weight
+
         public Arc(Node left, Node right, Integer weight) {
             this.left = left
             this.right = right

@@ -1,7 +1,6 @@
 package algo.other.cci;
 
-import algo.datastructures.SimpleTreeElement;
-import algo.others.cci.GraphTree;
+import algo.datastructures.tree.SimpleTree;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,10 +11,10 @@ public class GraphTreeTestCase extends Assert {
 
     @Test
     public void checkWhetherTreeIsBinarySearch1() {
-        SimpleTreeElement head = new SimpleTreeElement(5);
-        SimpleTreeElement left = new SimpleTreeElement(2);
-        SimpleTreeElement right = new SimpleTreeElement(8);
-        SimpleTreeElement leftRight = new SimpleTreeElement(9);
+        SimpleTree head = new SimpleTree(5);
+        SimpleTree left = new SimpleTree(2);
+        SimpleTree right = new SimpleTree(8);
+        SimpleTree leftRight = new SimpleTree(9);
 
         head.left = left;
         head.right = right;
@@ -27,10 +26,10 @@ public class GraphTreeTestCase extends Assert {
 
     @Test
     public void checkWhetherTreeIsBinarySearch2() {
-        SimpleTreeElement head = new SimpleTreeElement(5);
-        SimpleTreeElement left = new SimpleTreeElement(2);
-        SimpleTreeElement right = new SimpleTreeElement(8);
-        SimpleTreeElement leftRight = new SimpleTreeElement(3);
+        SimpleTree head = new SimpleTree(5);
+        SimpleTree left = new SimpleTree(2);
+        SimpleTree right = new SimpleTree(8);
+        SimpleTree leftRight = new SimpleTree(3);
 
         head.left = left;
         head.right = right;
@@ -41,10 +40,10 @@ public class GraphTreeTestCase extends Assert {
 
     @Test
     public void checkWhetherTreeIsBinarySearch3() {
-        SimpleTreeElement head = new SimpleTreeElement(5);
-        SimpleTreeElement left = new SimpleTreeElement(2);
-        SimpleTreeElement right = new SimpleTreeElement(5);
-        SimpleTreeElement leftRight = new SimpleTreeElement(3);
+        SimpleTree head = new SimpleTree(5);
+        SimpleTree left = new SimpleTree(2);
+        SimpleTree right = new SimpleTree(5);
+        SimpleTree leftRight = new SimpleTree(3);
 
         head.left = left;
         head.right = right;

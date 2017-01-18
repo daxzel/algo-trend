@@ -1,4 +1,4 @@
-package algo.others.cci;
+package algo.other.cci;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -68,7 +68,6 @@ public class LinkedLists {
     }
 
 
-
     /**
      * Find Kth element to the last
      */
@@ -101,7 +100,7 @@ public class LinkedLists {
      */
     public static void question5(LinkedListNode node, int a) {
 
-        while(a > 0 && node != null) {
+        while (a > 0 && node != null) {
             int b = node.data;
             node.data = (a + b) % 10;
             a = (a + b) / 10;
@@ -137,7 +136,7 @@ public class LinkedLists {
         }
 
 		/* Move slow to Head. Keep fast at Meeting Point. Each are k steps
-		/* from the Loop Start. If they move at the same pace, they must
+        /* from the Loop Start. If they move at the same pace, they must
 		 * meet at Loop Start. */
         slow = node;
         while (slow != fast) {
@@ -148,9 +147,6 @@ public class LinkedLists {
         // Both now point to the start of the loop.
         return fast;
     }
-
-
-
 
 
 }

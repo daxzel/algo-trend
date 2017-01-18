@@ -1,4 +1,4 @@
-package algo.others.cci;
+package algo.other.cci;
 
 /**
  * Created by andrey tsarevskiy

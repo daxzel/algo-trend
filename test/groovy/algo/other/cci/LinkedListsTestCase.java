@@ -1,13 +1,12 @@
 package algo.other.cci;
 
-import algo.others.cci.LinkedLists;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import static algo.others.cci.LinkedLists.*;
+import static algo.other.cci.LinkedLists.*;
 
 /**
  * Created by andrey tsarevskiy

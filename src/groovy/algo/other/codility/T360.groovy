@@ -1,9 +1,9 @@
-package algo.other;
+package algo.other.codility;
 
 /**
  * Created by Tsarevskiy
  */
-class Codility {
+class T360 {
 
     class AnagramOfPalindrome {
         /**
@@ -115,9 +115,9 @@ class Codility {
                 if (i - 1 >= 0) {
                     countCountryFromThisPoint(A, B, N, M, i - 1, j, color)
                 }
-                return true;
+                return true
             }
-            return false;
+            return false
         }
     }
 
