@@ -1,5 +1,8 @@
 package algo.puzzles.cci;
 
+import algo.datastructures.list.SimpleList;
+import algo.puzzles.list.FindElementFromTheEnd;
+import algo.puzzles.list.RemoveDuplicates;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,40 +23,40 @@ public class LinkedListsTestCase extends Assert {
         list.add(1);
         list.add(1);
         list.add(1);
-        question1(list);
+        RemoveDuplicates.question1(list);
         assertEquals(list.size(), 1);
     }
 
     @Test
     public void testDuplicate_2() {
-        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode second = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode third = new LinkedLists.LinkedListNode(2);
+        SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode second = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode third = new SimpleList.SimpleListNode(2);
         head.next = second;
         second.next = third;
-        question1_2(head);
+        RemoveDuplicates.question1_2(head);
         head.print();
         assertEquals((long)head.next.data, 2);
     }
 
     @Test
     public void testKthElement() {
-        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode second = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode third = new LinkedLists.LinkedListNode(2);
-        LinkedLists.LinkedListNode fourth = new LinkedLists.LinkedListNode(6);
+        SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode second = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode third = new SimpleList.SimpleListNode(2);
+        SimpleList.SimpleListNode fourth = new SimpleList.SimpleListNode(6);
         head.next = second;
         second.next = third;
         third.next = fourth;
-        assertEquals(question2(head, 2), 2);
+        assertEquals(FindElementFromTheEnd.question2(head, 2), 2);
     }
 
     @Test
     public void testRemoveElement() {
-        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode second = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode third = new LinkedLists.LinkedListNode(2);
-        LinkedLists.LinkedListNode fourth = new LinkedLists.LinkedListNode(6);
+        SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode second = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode third = new SimpleList.SimpleListNode(2);
+        SimpleList.SimpleListNode fourth = new SimpleList.SimpleListNode(6);
         head.next = second;
         second.next = third;
         third.next = fourth;
@@ -63,8 +66,8 @@ public class LinkedListsTestCase extends Assert {
 
     @Test
     public void testSum() {
-        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(9);
-        LinkedLists.LinkedListNode second = new LinkedLists.LinkedListNode(9);
+        SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(9);
+        SimpleList.SimpleListNode second = new SimpleList.SimpleListNode(9);
         head.next = second;
         question5(head, 1);
         assertEquals((long)head.data, 0);
@@ -74,12 +77,12 @@ public class LinkedListsTestCase extends Assert {
 
     @Test
     public void testLoops() {
-        LinkedLists.LinkedListNode head = new LinkedLists.LinkedListNode(9);
-        LinkedLists.LinkedListNode n2 = new LinkedLists.LinkedListNode(9);
-        LinkedLists.LinkedListNode n3 = new LinkedLists.LinkedListNode(2);
-        LinkedLists.LinkedListNode n4 = new LinkedLists.LinkedListNode(1);
-        LinkedLists.LinkedListNode n5 = new LinkedLists.LinkedListNode(5);
-        LinkedLists.LinkedListNode n6 = new LinkedLists.LinkedListNode(3);
+        SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(9);
+        SimpleList.SimpleListNode n2 = new SimpleList.SimpleListNode(9);
+        SimpleList.SimpleListNode n3 = new SimpleList.SimpleListNode(2);
+        SimpleList.SimpleListNode n4 = new SimpleList.SimpleListNode(1);
+        SimpleList.SimpleListNode n5 = new SimpleList.SimpleListNode(5);
+        SimpleList.SimpleListNode n6 = new SimpleList.SimpleListNode(3);
 
         head.next = n2;
         n2.next = n3;

@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-import static algo.puzzles.cci.LinkedLists.question1;
+import static algo.puzzles.list.RemoveDuplicates.question1;
 
 /**
  * Created by andrey tsarevskiy

@@ -1,11 +1,12 @@
-package algo.puzzles.cci;
+package algo.puzzles.bitwise;
 
+import algo.puzzles.CrackingCodingInterview;
 
 /**
  * Created by andrey tsarevskiy
  */
-public class BitManipulations {
-
+@CrackingCodingInterview
+public class CopyPartOfTheNumber {
     /**
      * Copy M to N from i to j bits
      */
@@ -23,5 +24,4 @@ public class BitManipulations {
 
         return n | m;
     }
-
 }
