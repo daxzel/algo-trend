@@ -1,38 +1,15 @@
-package algo.puzzles.cci;
+package algo.puzzles.list;
 
 import algo.datastructures.list.SimpleList;
-
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
+import algo.puzzles.CrackingCodingInterview;
 
 /**
  * Created by andrey tsarevskiy
  */
-public class LinkedLists {
-
-
+@CrackingCodingInterview
+public class FindLinkedListLoop {
     /**
-     * Linked represents a number. Implement sum
-     */
-    public static void question5(SimpleList.SimpleListNode node, int a) {
-
-        while (a > 0 && node != null) {
-            int b = node.data;
-            node.data = (a + b) % 10;
-            a = (a + b) / 10;
-            if (node.next == null && a > 0) {
-                node.next = new SimpleList.SimpleListNode(a);
-                node = null;
-            } else {
-                node = node.next;
-            }
-        }
-    }
-
-    /**
-     * Linked represents a number. Implement sum
+     * Find the loop in the linked list
      */
     public static SimpleList.SimpleListNode question6(SimpleList.SimpleListNode node) {
 
@@ -65,6 +42,4 @@ public class LinkedLists {
         // Both now point to the start of the loop.
         return fast;
     }
-
-
 }

@@ -1,38 +1,18 @@
 package algo.puzzles.cci;
 
 import algo.puzzles.array.ArrayRotation;
-import algo.puzzles.string.ReplaceSpaces;
 import algo.puzzles.string.StringsRotation;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static algo.puzzles.cci.ArrayAndStrings.*;
+import static algo.puzzles.string.ReplaceSpaces.replaceSpaces;
 
 /**
  * Created by andrey tsarevskiy
  */
 public class ArrayAndStringsTestCase extends Assert {
-
-    @Test
-    public void testUniqueCharacters() {
-        assertTrue(question1("abc"));
-        assertFalse(question1("aba"));
-        assertFalse(question1("abcdlpqowc"));
-        assertTrue(question1("bcdlpqowa"));
-
-        assertTrue(question1_2("abc"));
-        assertFalse(question1_2("aba"));
-        assertFalse(question1_2("abcdlpqowc"));
-        assertTrue(question1_2("bcdlpqowa"));
-    }
-
-    @Test
-    public void testIsStringsArePermutations() {
-        assertTrue(isPermutation("abc", "bca"));
-        assertFalse(isPermutation("abc2", "bca"));
-    }
 
     @Test
     public void testSpaceReplace() {
@@ -41,7 +21,7 @@ public class ArrayAndStringsTestCase extends Assert {
         for (int i = 0; i < str.length(); i++) {
             arr[i] = str.charAt(i);
         }
-        assertEquals(new String(ReplaceSpaces.replaceSpaces(arr, str.length())), "abc%20d%20e%20f");
+        assertEquals(new String(replaceSpaces(arr, str.length())), "abc%20d%20e%20f");
     }
 
     @Test

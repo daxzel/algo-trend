@@ -2,14 +2,14 @@ package algo.puzzles.cci;
 
 import algo.datastructures.list.SimpleList;
 import algo.puzzles.list.FindElementFromTheEnd;
+import algo.puzzles.list.FindLinkedListLoop;
+import algo.puzzles.list.LinkedListAsNumber;
 import algo.puzzles.list.RemoveDuplicates;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import static algo.puzzles.cci.LinkedLists.*;
 
 /**
  * Created by andrey tsarevskiy
@@ -52,24 +52,11 @@ public class LinkedListsTestCase extends Assert {
     }
 
     @Test
-    public void testRemoveElement() {
-        SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(1);
-        SimpleList.SimpleListNode second = new SimpleList.SimpleListNode(1);
-        SimpleList.SimpleListNode third = new SimpleList.SimpleListNode(2);
-        SimpleList.SimpleListNode fourth = new SimpleList.SimpleListNode(6);
-        head.next = second;
-        second.next = third;
-        third.next = fourth;
-        question3(second);
-        assertEquals((long)head.next.data, 2);
-    }
-
-    @Test
     public void testSum() {
         SimpleList.SimpleListNode head = new SimpleList.SimpleListNode(9);
         SimpleList.SimpleListNode second = new SimpleList.SimpleListNode(9);
         head.next = second;
-        question5(head, 1);
+        LinkedListAsNumber.question5(head, 1);
         assertEquals((long)head.data, 0);
         assertEquals((long)head.next.data, 0);
         assertEquals((long)head.next.next.data, 1);
@@ -91,8 +78,8 @@ public class LinkedListsTestCase extends Assert {
         n5.next = n6;
         n6.next = n4;
 
-        question6(head);
-        assertEquals((long)question6(head).data, 1);
+        FindLinkedListLoop.question6(head);
+        assertEquals((long) FindLinkedListLoop.question6(head).data, 1);
     }
 
 

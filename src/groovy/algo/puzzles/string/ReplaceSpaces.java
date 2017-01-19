@@ -6,7 +6,7 @@ import algo.puzzles.CrackingCodingInterview;
  * Created by andrey tsarevskiy
  */
 @CrackingCodingInterview
-class ReplaceSpaces {
+public class ReplaceSpaces {
     /**
      * Replace spaces with %20
      */
