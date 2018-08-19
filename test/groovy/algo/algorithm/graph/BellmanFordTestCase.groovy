@@ -1,13 +1,12 @@
 package algo.algorithm.graph
 
 import algo.datastructures.graph.Graph
+import org.junit.Assert
 
-/**
- * Created by Tsarevskiy
- */
-class DijkstraTestCase extends GroovyTestCase {
 
-    void testDijkstra() {
+class BellmanFordTestCase extends GroovyTestCase {
+
+    void testBellmanFord() {
         Graph graph = new Graph()
         def firstNode = graph.createNewNode(1)
         def secondNode = graph.createNewNode(2)
@@ -26,10 +25,9 @@ class DijkstraTestCase extends GroovyTestCase {
         graph.connect(thirdNode, fourthNode, 11)
         graph.connect(secondNode, fourthNode, 15)
 
-        def distance = Dijkstra.returnMinDistance(graph, firstNode, fourthNode);
-        assertEquals(distance.pop().value, 4)
-        assertEquals(distance.pop().value, 3)
-        assertEquals(distance.pop().value, 1)
+        def distance = BellmanFord.returnMinDistance(graph, firstNode, fourthNode)
+
+        Assert.assertEquals(20, distance)
     }
 
 }

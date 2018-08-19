@@ -7,6 +7,16 @@ class Graph {
 
     Set<Node> nodes = new HashSet<>()
 
+    public Set<Arc> getArcs() {
+        Set<Arc> result = new HashSet<>()
+        for (Node node : nodes) {
+            for (Arc arc : node.connections) {
+                result.add(arc)
+            }
+        }
+        return result
+    }
+
     class Node {
         List<Arc> connections = new ArrayList<>()
         Object value
