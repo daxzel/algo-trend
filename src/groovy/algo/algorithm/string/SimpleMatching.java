@@ -2,6 +2,12 @@ package algo.algorithm.string;
 
 public class SimpleMatching {
 
+    /**
+     * Simple pattern matching algorithm.
+     *
+     * Performance: O(N * M)
+     *
+     */
     public static int find(char[] word, char[] text) {
 
         for (int i = 0; i < text.length; i++) {

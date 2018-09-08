@@ -12,6 +12,8 @@ public class KMPMatching {
      * This was the first linear-time algorithm for string matching. The three published it jointly in 1977.
      * Independently, in 1969, Matiyasevich discovered a similar algorithm, coded by a two-dimensional
      * Turing machine, while studying a string-pattern-matching recognition problem.
+     *
+     * Performance: O(N + M)
      */
     public static int find(char[] word, char[] text) {
 
