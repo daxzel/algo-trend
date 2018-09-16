@@ -49,9 +49,9 @@ class Sorting {
     }
 
     /**
-     * Worst case performance	    О(n2)
-     * Best case performance	    О(n2)
-     * Average case performance	    О(n2)
+     * Worst case performance	    О(n^2)
+     * Best case performance	    О(n^2)
+     * Average case performance	    О(n^2)
      * Worst case space complexity	О(n) total, O(1) auxiliary
      */
     static void selection(int[] array) {
