@@ -1,20 +1,28 @@
-package algo.algorithm.graph;
+package algo.algorithm.graph.shortest_path;
 
 
 import algo.datastructures.graph.Graph;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Tsarevskiy
  */
+@SuppressWarnings("unchecked")
 public class Dijkstra {
 
     /**
      * Dijkstra's original algorithm does not use a min-priority queue and runs in time O(|V|^2)
      * (where |V| is the number of nodes).
      */
-    public static Deque<Graph.Node> returnMinDistance(Graph graph, Graph.Node from, Graph.Node to) {
+    public static <T> Deque<Graph.Node> returnMinDistance(Graph<T> graph, Graph<T>.Node<T> from,
+                                                          Graph<T>.Node<T> to) {
         Set<Graph.Node> unvisited = new HashSet<>();
 
         Map<Graph.Node, Integer> dist = new HashMap<>();
@@ -28,7 +36,7 @@ public class Dijkstra {
         Graph.Node firstNode = from;
 
         while (!unvisited.isEmpty()) {
-            final Graph.Node node;
+            final Graph<T>.Node<T> node;
             if (firstNode != null) {
                 node = firstNode;
                 firstNode = null;
@@ -39,7 +47,7 @@ public class Dijkstra {
                 break;
             }
             unvisited.remove(node);
-            node.getConnections().stream().forEach(arc -> {
+            node.getConnections().forEach(arc -> {
                 Graph.Node anotherNode = getAnotherEnd(arc, node);
                 Integer distance = dist.get(node);
 

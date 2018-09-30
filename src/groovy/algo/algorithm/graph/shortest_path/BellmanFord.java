@@ -1,4 +1,4 @@
-package algo.algorithm.graph;
+package algo.algorithm.graph.shortest_path;
 
 import algo.datastructures.graph.Graph;
 import algo.datastructures.graph.Graph.Arc;
@@ -28,7 +28,7 @@ public class BellmanFord {
      * Best-case performance	     Theta (E)
      * Worst-case space complexity	 Theta (V)
      */
-    public static Integer returnMinDistance(Graph graph, Graph.Node from, Graph.Node to) {
+    public static <T>Integer returnMinDistance(Graph<T> graph, Graph<T>.Node<T> from, Graph<T>.Node<T> to) {
         Set<Arc> arcs = graph.getArcs();
 
         Map<Node, Integer> result = new HashMap<>();

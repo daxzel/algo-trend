@@ -1,11 +1,13 @@
-package algo.algorithm.graph;
+package algo.algorithm.graph.shortest_path;
 
 import algo.datastructures.graph.Graph;
 import algo.datastructures.graph.Graph.Arc;
 import algo.datastructures.graph.Graph.Node;
 
+import java.util.List;
 import java.util.Set;
 
+@SuppressWarnings("unchecked")
 public class FloydWarshall {
 
     /**
@@ -89,7 +91,8 @@ public class FloydWarshall {
                 if (first == second) {
                     result[i][j] = 0;
                 } else {
-                    for (Arc arc : first.getConnections()) {
+                    List<Arc> connections = first.getConnections();
+                    for (Arc arc : connections) {
                         if (arc.getRight() == second) {
                             result[i][j] = arc.getWeight();
                         }

@@ -1,5 +1,6 @@
 package algo.algorithm.graph
 
+import algo.algorithm.graph.shortest_path.BellmanFord
 import algo.datastructures.graph.Graph
 import org.junit.Assert
 

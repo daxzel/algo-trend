@@ -1,5 +1,6 @@
 package algo.algorithm.graph
 
+import algo.algorithm.graph.shortest_path.FloydWarshall
 import algo.datastructures.graph.Graph
 import algo.util.Printer
 
