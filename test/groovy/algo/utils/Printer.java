@@ -1,4 +1,4 @@
-package algo.util;
+package algo.utils;
 
 public class Printer {
 

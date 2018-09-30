@@ -2,6 +2,7 @@ package algo.algorithm.graph.shortest_path;
 
 
 import algo.datastructures.graph.Graph;
+import algo.utils.annotations.Video;
 
 import java.util.Collection;
 import java.util.Deque;
@@ -15,6 +16,7 @@ import java.util.Set;
  * Created by Tsarevskiy
  */
 @SuppressWarnings("unchecked")
+@Video("https://www.youtube.com/watch?v=XB4MIexjvY0")
 public class Dijkstra {
 
     /**
