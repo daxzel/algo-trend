@@ -1,5 +1,7 @@
 package algo.datastructures.graph;
 
+import org.testng.collections.Lists;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -19,26 +21,37 @@ public class Graph<T> {
     public Set<Arc> getArcs() {
         Set<Arc> result = new HashSet<>();
         for (Node<T> node : nodes) {
-            result.addAll(node.connections);
+            result.addAll(node.getConnections());
         }
         return result;
     }
 
-    public class Node<C> {
+    public static class Node<C> {
 
-        List<Arc<C>> connections = new ArrayList<>();
+        List<Arc<C>> out = new ArrayList<>();
+        List<Arc<C>> in = new ArrayList<>();
         C value;
 
         public List<Arc<C>> getConnections() {
+            List<Arc<C>> connections = Lists.newArrayList(out);
+            connections.addAll(in);
             return connections;
         }
 
         public C getValue() {
             return value;
         }
+
+        public List<Arc<C>> getOut() {
+            return out;
+        }
+
+        public List<Arc<C>> getIn() {
+            return in;
+        }
     }
 
-    public class Arc<C> {
+    public static class Arc<C> {
 
         Node<C> left;
         Node<C> right;
@@ -72,8 +85,12 @@ public class Graph<T> {
 
     public void connect(Node<T> from, Node<T> to, Integer weight) {
         Arc<T> arc = new Arc<>(from, to, weight);
-        from.connections.add(arc);
-        to.connections.add(arc);
+        from.out.add(arc);
+        to.in.add(arc);
+    }
+
+    public int size() {
+        return nodes.size();
     }
 
 }

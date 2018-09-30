@@ -23,8 +23,8 @@ public class Dijkstra {
      * Dijkstra's original algorithm does not use a min-priority queue and runs in time O(|V|^2)
      * (where |V| is the number of nodes).
      */
-    public static <T> Deque<Graph.Node> returnMinDistance(Graph<T> graph, Graph<T>.Node<T> from,
-                                                          Graph<T>.Node<T> to) {
+    public static <T> Deque<Graph.Node> returnMinDistance(Graph<T> graph, Graph.Node<T> from,
+                                                          Graph.Node<T> to) {
         Set<Graph.Node> unvisited = new HashSet<>();
 
         Map<Graph.Node, Integer> dist = new HashMap<>();
@@ -38,7 +38,7 @@ public class Dijkstra {
         Graph.Node firstNode = from;
 
         while (!unvisited.isEmpty()) {
-            final Graph<T>.Node<T> node;
+            final Graph.Node<T> node;
             if (firstNode != null) {
                 node = firstNode;
                 firstNode = null;

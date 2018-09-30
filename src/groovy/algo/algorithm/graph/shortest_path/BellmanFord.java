@@ -28,7 +28,7 @@ public class BellmanFord {
      * Best-case performance	     Theta (E)
      * Worst-case space complexity	 Theta (V)
      */
-    public static <T>Integer returnMinDistance(Graph<T> graph, Graph<T>.Node<T> from, Graph<T>.Node<T> to) {
+    public static <T> Integer returnMinDistance(Graph<T> graph, Graph.Node<T> from, Graph.Node<T> to) {
         Set<Arc> arcs = graph.getArcs();
 
         Map<Node, Integer> result = new HashMap<>();
