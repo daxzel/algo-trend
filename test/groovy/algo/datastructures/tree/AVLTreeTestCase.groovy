@@ -1,4 +1,7 @@
 package algo.datastructures.tree
+
+import algo.datastructures.tree.self_balanced.AVLTree
+
 /**
  * Created by Tsarevskiy
  */

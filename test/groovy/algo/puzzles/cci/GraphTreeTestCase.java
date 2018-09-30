@@ -1,6 +1,6 @@
 package algo.puzzles.cci;
 
-import algo.datastructures.tree.SimpleTree;
+import algo.datastructures.tree.IntTree;
 import algo.puzzles.tree.CheckBinarySearchTree;
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,10 +12,10 @@ public class GraphTreeTestCase extends Assert {
 
     @Test
     public void checkWhetherTreeIsBinarySearch1() {
-        SimpleTree head = new SimpleTree(5);
-        SimpleTree left = new SimpleTree(2);
-        SimpleTree right = new SimpleTree(8);
-        SimpleTree leftRight = new SimpleTree(9);
+        IntTree head = new IntTree(5);
+        IntTree left = new IntTree(2);
+        IntTree right = new IntTree(8);
+        IntTree leftRight = new IntTree(9);
 
         head.left = left;
         head.right = right;
@@ -27,10 +27,10 @@ public class GraphTreeTestCase extends Assert {
 
     @Test
     public void checkWhetherTreeIsBinarySearch2() {
-        SimpleTree head = new SimpleTree(5);
-        SimpleTree left = new SimpleTree(2);
-        SimpleTree right = new SimpleTree(8);
-        SimpleTree leftRight = new SimpleTree(3);
+        IntTree head = new IntTree(5);
+        IntTree left = new IntTree(2);
+        IntTree right = new IntTree(8);
+        IntTree leftRight = new IntTree(3);
 
         head.left = left;
         head.right = right;
@@ -41,10 +41,10 @@ public class GraphTreeTestCase extends Assert {
 
     @Test
     public void checkWhetherTreeIsBinarySearch3() {
-        SimpleTree head = new SimpleTree(5);
-        SimpleTree left = new SimpleTree(2);
-        SimpleTree right = new SimpleTree(5);
-        SimpleTree leftRight = new SimpleTree(3);
+        IntTree head = new IntTree(5);
+        IntTree left = new IntTree(2);
+        IntTree right = new IntTree(5);
+        IntTree leftRight = new IntTree(3);
 
         head.left = left;
         head.right = right;

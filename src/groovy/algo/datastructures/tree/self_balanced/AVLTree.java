@@ -1,4 +1,4 @@
-package algo.datastructures.tree;
+package algo.datastructures.tree.self_balanced;
 
 /**
  * Named after Georgy Adelson-Velsky and Evgenii Landis.

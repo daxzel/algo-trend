@@ -1,11 +1,11 @@
 package algo.algorithm.graph.spanning_tree;
 
 import algo.datastructures.graph.Graph;
-import algo.datastructures.tree.SimpleTree;
+import algo.datastructures.tree.IntTree;
 
 public class Kruskal {
 
-    public SimpleTree getMinimumSpanningTree(Graph graph) {
+    public IntTree getMinimumSpanningTree(Graph graph) {
         return null;
     }
 

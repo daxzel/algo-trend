@@ -3,12 +3,12 @@ package algo.datastructures.tree;
 /**
  * Created by andrey tsarevskiy
  */
-public class SimpleTree {
-    public SimpleTree left;
-    public SimpleTree right;
+public class IntTree {
+    public IntTree left;
+    public IntTree right;
     public int value;
 
-    public SimpleTree(int value) {
+    public IntTree(int value) {
         this.value = value;
     }
 

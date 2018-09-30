@@ -1,6 +1,6 @@
 package algo.puzzles.tree;
 
-import algo.datastructures.tree.SimpleTree;
+import algo.datastructures.tree.IntTree;
 import algo.puzzles.CrackingCodingInterview;
 
 import java.util.Iterator;
@@ -14,7 +14,7 @@ public class CheckBinarySearchTree {
     /**
      * Check whether tree is binary search
      */
-    public static boolean firstMethod(SimpleTree treeHead) {
+    public static boolean firstMethod(IntTree treeHead) {
 
         LinkedList<Integer> list = new LinkedList<>();
         firstMethodDeep(treeHead, list);
@@ -33,14 +33,14 @@ public class CheckBinarySearchTree {
     /**
      * Check whether tree is binary search, min max approach
      */
-    public static boolean secondMethod(SimpleTree treeHead) {
+    public static boolean secondMethod(IntTree treeHead) {
         return secondMethodDeep(treeHead, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
     /**
      * Check whether tree is binary search
      */
-    static void firstMethodDeep(SimpleTree treeHead, LinkedList<Integer> linkedList) {
+    static void firstMethodDeep(IntTree treeHead, LinkedList<Integer> linkedList) {
         if (treeHead.left != null) {
             firstMethodDeep(treeHead.left, linkedList);
         }
@@ -53,7 +53,7 @@ public class CheckBinarySearchTree {
     /**
      * Check whether tree is binary search
      */
-    public static boolean secondMethodDeep(SimpleTree treeHead, int min, int max) {
+    public static boolean secondMethodDeep(IntTree treeHead, int min, int max) {
         if (treeHead == null) {
             return true;
         }
