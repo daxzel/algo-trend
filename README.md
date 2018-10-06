@@ -4,6 +4,7 @@ Algo-trend
 My implementations of different algorithms and data structures. Nothing special. I'm sure those are the worse versions of them.
 
 **Algorithms**
+
 Graph:
   * Bellman–Ford
   * Dijkstra
@@ -35,3 +36,6 @@ Tree:
 
 Cache:
   * LRU
+  
+Map:
+  * OpenAddressing
