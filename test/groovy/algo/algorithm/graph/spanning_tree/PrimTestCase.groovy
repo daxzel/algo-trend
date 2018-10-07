@@ -2,9 +2,9 @@ package algo.algorithm.graph.spanning_tree
 
 import algo.datastructures.graph.Graph
 
-class KruskalTestCase extends GroovyTestCase {
+class PrimTestCase extends GroovyTestCase {
 
-    void testKruskal() {
+    void testPrim() {
         Graph graph = new Graph()
         def firstNode = graph.createNewNode(1)
         def secondNode = graph.createNewNode(2)
@@ -16,9 +16,7 @@ class KruskalTestCase extends GroovyTestCase {
         graph.connect(secondNode, thirdNode, 5)
         graph.connect(thirdNode, firstNode, 30)
 
-        def spanningTree = Kruskal.minSpanningTree(graph)
-
-        assertEquals(spanningTree.size(), 3)
+        Prim.minSpanningTree(graph)
     }
 
 }

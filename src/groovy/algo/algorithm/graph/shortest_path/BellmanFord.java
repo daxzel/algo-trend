@@ -29,7 +29,7 @@ public class BellmanFord {
      * Worst-case space complexity	 Theta (V)
      */
     public static <T> Integer returnMinDistance(Graph<T> graph, Graph.Node<T> from, Graph.Node<T> to) {
-        Set<Arc> arcs = graph.getArcs();
+        Set<Arc<T>> arcs = graph.getArcs();
 
         Map<Node, Integer> result = new HashMap<>();
         result.put(from, 0);

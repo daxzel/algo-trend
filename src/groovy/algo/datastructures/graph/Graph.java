@@ -3,6 +3,7 @@ package algo.datastructures.graph;
 import org.testng.collections.Lists;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,8 +19,8 @@ public class Graph<T> {
         return nodes;
     }
 
-    public Set<Arc> getArcs() {
-        Set<Arc> result = new HashSet<>();
+    public Set<Arc<T>> getArcs() {
+        Set<Arc<T>> result = new HashSet<>();
         for (Node<T> node : nodes) {
             result.addAll(node.getConnections());
         }
@@ -74,6 +75,20 @@ public class Graph<T> {
         public Integer getWeight() {
             return weight;
         }
+
+        public static Comparator<? super Arc<?>> MIN_COMPARATOR = (o1, o2) -> {
+            Integer w1 = o1.getWeight();
+            Integer w2 = o2.getWeight();
+            if (w1.equals(w2)) {
+                return 0;
+            } else {
+                if (w1 > w2) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        };
     }
 
     public Node<T> createNewNode(T value) {
