@@ -1,6 +1,7 @@
 package algo.datastructures.graph;
 
-import org.testng.collections.Lists;
+
+import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
 import java.util.Comparator;

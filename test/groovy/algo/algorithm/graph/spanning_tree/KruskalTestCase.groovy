@@ -1,5 +1,6 @@
 package algo.algorithm.graph.spanning_tree
 
+import algo.algorithm.graph.CycleDFS
 import algo.datastructures.graph.Graph
 
 class KruskalTestCase extends GroovyTestCase {
@@ -19,6 +20,7 @@ class KruskalTestCase extends GroovyTestCase {
         def spanningTree = Kruskal.minSpanningTree(graph)
 
         assertEquals(spanningTree.size(), 3)
+        assertFalse(CycleDFS.containsCycles(spanningTree))
     }
 
 }

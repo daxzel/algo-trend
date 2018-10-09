@@ -1,5 +1,6 @@
 package algo.algorithm.graph.spanning_tree
 
+import algo.algorithm.graph.CycleDFS
 import algo.datastructures.graph.Graph
 
 class PrimTestCase extends GroovyTestCase {
@@ -16,7 +17,10 @@ class PrimTestCase extends GroovyTestCase {
         graph.connect(secondNode, thirdNode, 5)
         graph.connect(thirdNode, firstNode, 30)
 
-        Prim.minSpanningTree(graph)
+        def spanningTree = Prim.minSpanningTree(graph)
+        assertEquals(spanningTree.size(), 3)
+        assertTrue(CycleDFS.containsCycles(graph))
+        assertFalse(CycleDFS.containsCycles(spanningTree))
     }
 
 }

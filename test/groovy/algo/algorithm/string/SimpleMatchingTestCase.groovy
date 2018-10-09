@@ -1,6 +1,6 @@
 package algo.algorithm.string
 
-import org.testng.Assert;
+import org.junit.Assert
 
 class SimpleMatchingTestCase extends GroovyTestCase {
 

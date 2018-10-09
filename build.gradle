@@ -1,6 +1,14 @@
 
 apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'idea'
+
+idea {
+    module {
+        downloadJavadoc = true // defaults to false
+        downloadSources = true
+    }
+}
 
 repositories {
     mavenCentral()
@@ -8,6 +16,7 @@ repositories {
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.5'
+    compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
     compile 'junit:junit:4.12'
 }
 
