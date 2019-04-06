@@ -24,8 +24,8 @@ public class Paxos {
         for (int i = 0; i < numberOfNodes; i++) {
             allNodes.add(new Node(i));
         }
-        for (Node allNode : allNodes) {
-            Executors.newSingleThreadExecutor().submit(allNode::doJob);
+        for (Node node : allNodes) {
+            Executors.newSingleThreadExecutor().submit(node::doJob);
         }
     }
 
