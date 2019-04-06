@@ -1,29 +1,29 @@
 package algo.algorithm.distributed;
 
 
-import algo.algorithm.distributed.LamportClock.EventTime;
+import algo.algorithm.distributed.LamportClocks.EventTime;
 import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-class LamportClockTestCase extends Assert {
+class LamportClocksTestCase extends Assert {
 
     @Test
     public void testLamport() throws InterruptedException {
 
         int nodes = 5;
         Random random = new Random();
-        LamportClock lamportClock = new LamportClock(nodes);
+        LamportClocks lamportClocks = new LamportClocks(nodes);
 
         System.out.print("------------------------------------");
         for (int i = 0; i < 100; i++) {
             Thread.sleep(random.nextInt(3000));
-            Lock writeLock = lamportClock.lock.writeLock();
+            Lock writeLock = lamportClocks.lock.writeLock();
             writeLock.lock();
             try {
 
-                for (LamportClock.Node node : lamportClock.allNodes) {
+                for (LamportClocks.Node node : lamportClocks.allNodes) {
                     System.out.println();
                     System.out.print(node.hostIndex + ": [");
                     node.eventTimes.stream().map(time -> "(" + time.nodeOrigin + ", " + time.time + ", " +
@@ -35,7 +35,7 @@ class LamportClockTestCase extends Assert {
                 System.out.println();
                 System.out.print("------------------------------------");
 
-                for (LamportClock.Node node : lamportClock.allNodes) {
+                for (LamportClocks.Node node : lamportClocks.allNodes) {
                     int lastBiggestTime = 0;
 
                     for (EventTime eventTime : node.eventTimes) {
