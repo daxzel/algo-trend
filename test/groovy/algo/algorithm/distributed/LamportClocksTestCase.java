@@ -2,6 +2,7 @@ package algo.algorithm.distributed;
 
 
 import algo.algorithm.distributed.LamportClocks.EventTime;
+import algo.algorithm.distributed.LamportClocks.LamportNode;
 import java.util.Random;
 import java.util.concurrent.locks.Lock;
 import org.junit.Assert;
@@ -23,7 +24,7 @@ class LamportClocksTestCase extends Assert {
             writeLock.lock();
             try {
 
-                for (LamportClocks.Node node : lamportClocks.allNodes) {
+                for (LamportNode node : lamportClocks.allNodes) {
                     System.out.println();
                     System.out.print(node.hostIndex + ": [");
                     node.eventTimes.stream().map(time -> "(" + time.nodeOrigin + ", " + time.time + ", " +
@@ -35,7 +36,7 @@ class LamportClocksTestCase extends Assert {
                 System.out.println();
                 System.out.print("------------------------------------");
 
-                for (LamportClocks.Node node : lamportClocks.allNodes) {
+                for (LamportNode node : lamportClocks.allNodes) {
                     int lastBiggestTime = 0;
 
                     for (EventTime eventTime : node.eventTimes) {

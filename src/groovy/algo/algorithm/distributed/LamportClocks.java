@@ -1,32 +1,17 @@
 package algo.algorithm.distributed;
 
+import algo.algorithm.distributed.LamportClocks.Gossip;
+import algo.algorithm.distributed.LamportClocks.LamportNode;
+import algo.algorithm.distributed.gossip.AbstractGossip;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-import jline.internal.Nullable;
 
-public class LamportClocks {
-
-    public final ReadWriteLock lock = new ReentrantReadWriteLock();
-
-    public final List<Node> allNodes;
+public class LamportClocks extends AbstractGossip<Gossip, LamportNode> {
 
     public LamportClocks(int numberOfNodes) {
-        this.allNodes = new ArrayList<>();
-        for (int i = 0; i < numberOfNodes; i++) {
-            allNodes.add(new Node(i));
-        }
-        for (Node node : allNodes) {
-            Executors.newSingleThreadExecutor().submit(node::doJob);
-        }
-    }
-
-    public ReadWriteLock getLock() {
-        return lock;
+        super(numberOfNodes);
     }
 
     public class Event {
@@ -51,69 +36,61 @@ public class LamportClocks {
         }
     }
 
+    public class Gossip {
 
-    public class Node {
+        public final List<EventTime> events;
+        public final int time;
 
-        List<EventTime> eventTimes = new ArrayList<>();
+        public Gossip(List<EventTime> events, int time) {
+            this.events = events;
+            this.time = time;
+        }
+    }
 
-        private volatile int currentTime = 0;
+    @Override
+    protected LamportNode createNode(List<LamportNode> allNodes, int hostIndex, ReadWriteLock lock) {
+        return new LamportNode(allNodes, hostIndex, lock);
+    }
 
-        final int hostIndex;
+    public class LamportNode extends AbstractGossip.Node<Gossip, LamportNode> {
 
-        public Node(int hostIndex) {
-            this.hostIndex = hostIndex;
+        public List<EventTime> eventTimes = new ArrayList<>();
+        public int currentTime = 0;
+
+        public LamportNode(List<LamportNode> allNodes, int hostIndex, ReadWriteLock lock) {
+            super(allNodes, hostIndex, lock);
         }
 
-        @Nullable
-        public synchronized void sentEvents(List<EventTime> eventTimes, int time) {
+        public synchronized void sentGossip(Gossip g) {
+            List<EventTime> eventTimes = g.events;
 
             for (EventTime eventTime : eventTimes) {
                 if (!this.eventTimes.contains(eventTime)) {
                     this.eventTimes.add(eventTime);
                 }
             }
-            currentTime = Math.max(time, currentTime);
+            currentTime = Math.max(g.time, currentTime);
             currentTime++;
         }
 
-
-        public void doJob() {
-            OUTER:
-            for (; ; ) {
-                Lock lock = LamportClocks.this.lock.readLock();
-                lock.lock();
-                try {
-                    Thread.sleep(ThreadLocalRandom.current().nextLong(3000));
-                    doIteration();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                } finally {
-                    lock.unlock();
-                }
-
-            }
-        }
-
+        @Override
         public synchronized void doIteration() {
-            boolean eventGeneration = ThreadLocalRandom.current().nextBoolean();
-
-            if (eventGeneration) {
-                Event event = new Event(ThreadLocalRandom.current().nextInt(0, Integer.MAX_VALUE));
-                currentTime++;
-                EventTime time = new EventTime(hostIndex, currentTime, event);
-                eventTimes.add(time);
-            } else {
-                int size = allNodes.size();
-                int i = ThreadLocalRandom.current().nextInt(size);
-                currentTime++;
-                allNodes.get(i).sentEvents(eventTimes, currentTime);
-
-            }
-
+            currentTime++;
+            super.doIteration();
         }
 
-    }
+        @Override
+        protected Gossip createGossip() {
+            return new Gossip(eventTimes, currentTime);
+        }
 
+        @Override
+        protected void generateEvent() {
+            Event event = new Event(ThreadLocalRandom.current().nextInt(0, Integer.MAX_VALUE));
+            EventTime time = new EventTime(hostIndex, currentTime, event);
+            eventTimes.add(time);
+        }
+    }
 
 }
 
