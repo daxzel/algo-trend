@@ -1,5 +1,4 @@
 
-apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'idea'
 
@@ -15,24 +14,24 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.5'
     compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
-    compile 'junit:junit:4.12'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
 }
 
 sourceSets {
     main {
-        groovy {
-            srcDirs = ['src/groovy']
-        }
         java {
             srcDirs = ['src/java']
         }
     }
-
     test {
-        groovy {
-            srcDirs = ['test/groovy']
+        java {
+            srcDirs = ['test/java']
         }
     }
+}
+
+test {
+    useJUnitPlatform()
 }
