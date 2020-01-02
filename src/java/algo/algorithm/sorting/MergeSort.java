@@ -43,13 +43,13 @@ public class MergeSort {
         for (int j = iBegin; j < iEnd; j++) {
             if (iA == iMiddle) {
                 B[j] = A[jA];
-                jA = jA++;
+                jA++;
                 continue;
             }
 
             if (jA == iEnd) {
                 B[j] = A[iA];
-                iA = iA++;
+                iA++;
                 continue;
             }
 
@@ -57,10 +57,10 @@ public class MergeSort {
             int right = A[jA];
             if (left < right) {
                 B[j] = left;
-                iA = iA++;
+                iA++;
             } else {
                 B[j] = right;
-                jA = jA++;
+                jA++;
             }
 
         }

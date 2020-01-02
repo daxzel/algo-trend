@@ -23,7 +23,7 @@ public class BinaryHeap {
 
             if (index == null) {
                 size += 2 << (height - 1);
-                height = height++;
+                height++;
                 index = size;
             }
 

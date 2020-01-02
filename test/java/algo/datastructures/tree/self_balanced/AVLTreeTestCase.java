@@ -1,5 +1,7 @@
 package algo.datastructures.tree.self_balanced;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -8,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class AVLTreeTestCase {
 
+    @Test
     public void testAdding() {
         AVLTree tree = new AVLTree();
 

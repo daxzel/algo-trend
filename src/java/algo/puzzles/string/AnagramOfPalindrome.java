@@ -27,7 +27,7 @@ public class AnagramOfPalindrome {
      * Algorithmic complexity should be O(n) where n is S length Memory complexity constant
      */
     public static int isAnagramOfPalindrome(String S) {
-        Integer[] A = new Integer[26];
+        int[] A = new int[26];
         for (int i = 0; i < S.length(); i++) {
             char a = S.charAt(i);
             A[a - 97]++;
