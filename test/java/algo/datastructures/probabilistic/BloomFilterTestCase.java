@@ -1,8 +1,9 @@
 package algo.datastructures.probabilistic;
 
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BloomFilterTestCase {
 
@@ -17,10 +18,10 @@ class BloomFilterTestCase {
         filter.addItem(12);
         filter.addItem(99999);
 
-        Assertions.assertTrue(filter.contains(2));
-        Assertions.assertFalse(filter.contains(3));
-        Assertions.assertTrue(filter.contains(12));
-        Assertions.assertFalse(filter.contains(1001));
+        assertTrue(filter.contains(2));
+        assertFalse(filter.contains(3));
+        assertTrue(filter.contains(12));
+        assertFalse(filter.contains(1001));
     }
 
     @Test
@@ -34,10 +35,10 @@ class BloomFilterTestCase {
         filter.addItem(12);
         filter.addItem(99999);
 
-        Assertions.assertTrue(filter.contains(2));
-        Assertions.assertFalse(filter.contains(3));
-        Assertions.assertTrue(filter.contains(12));
-        Assertions.assertFalse(filter.contains(1001));
+        assertTrue(filter.contains(2));
+        assertFalse(filter.contains(3));
+        assertTrue(filter.contains(12));
+        assertFalse(filter.contains(1001));
     }
 
     @Test
@@ -51,9 +52,9 @@ class BloomFilterTestCase {
         filter.addItem(12);
         filter.addItem(99999);
 
-        Assertions.assertTrue(filter.contains(2));
-        Assertions.assertFalse(filter.contains(3));
-        Assertions.assertTrue(filter.contains(12));
-        Assertions.assertFalse(filter.contains(1001));
+        assertTrue(filter.contains(2));
+        assertFalse(filter.contains(3));
+        assertTrue(filter.contains(12));
+        assertFalse(filter.contains(1001));
     }
 }

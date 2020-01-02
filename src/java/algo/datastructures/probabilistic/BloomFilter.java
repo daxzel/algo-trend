@@ -16,15 +16,14 @@ public class BloomFilter {
         filter = new boolean[size];
         Random random = new Random();
         for (int i = 0; i < hashes; i++) {
-            int salt = random.nextInt(Integer.MAX_VALUE);
+            int salt = random.nextInt(200);
             hashSalts.add(salt);
         }
     }
 
     public void addItem(int item) {
         for (Integer hashSalt : hashSalts) {
-            int hash = SimpleHash.getHash(item, hashSalt);
-            int index = hash % filter.length;
+            int index = SimpleHash.getDoubleHash(item, filter.length, hashSalt);
             filter[index] = true;
         }
         itemsAdded.add(item);
@@ -32,8 +31,7 @@ public class BloomFilter {
 
     public boolean contains(int item) {
         for (Integer hashSalt : hashSalts) {
-            int hash = SimpleHash.getHash(item, hashSalt);
-            int index = hash % filter.length;
+            int index = SimpleHash.getDoubleHash(item, filter.length, hashSalt);
             if (!filter[index]) {
                 return false;
             }
