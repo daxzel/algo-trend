@@ -17,8 +17,6 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "org.junit.jupiter:junit-jupiter-api:5.5.2",
-        "org.junit.jupiter:junit-jupiter-engine:5.5.2",
         "com.google.guava:guava:26.0-jre",
     ],
     fetch_sources = True,

@@ -5,12 +5,12 @@ package(
 load("//:junit5.bzl", "java_junit5_test")
 
 java_junit5_test(
-    name = "distributed_tests",
+    name = "string_tests",
     srcs = glob([
         "*.java",
     ]),
-    test_package = "algo.algorithm.distributed",
+    test_package = "algo.algorithm.string",
     deps = [
-        "//src/java/algo/algorithm/distributed:distributed",
+        "//src/java/algo/algorithm/string:string",
     ],
 )

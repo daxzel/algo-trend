@@ -1,8 +1,8 @@
 package algo.algorithm.graph;
 
-import algo.datastructures.graph.Graph;
-import algo.datastructures.graph.Graph.Arc;
-import algo.datastructures.graph.Graph.Node;
+import algo.datastructures.Graph;
+import algo.datastructures.Graph.Arc;
+import algo.datastructures.Graph.Node;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

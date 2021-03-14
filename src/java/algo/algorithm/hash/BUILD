@@ -1,7 +1,7 @@
 package(default_visibility = ["//visibility:public"])
 
 java_library(
-    name = "distributed",
+    name = "hash",
     srcs = glob([
         "*.java",
     ]),

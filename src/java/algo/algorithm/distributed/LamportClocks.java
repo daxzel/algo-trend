@@ -2,7 +2,6 @@ package algo.algorithm.distributed;
 
 import algo.algorithm.distributed.LamportClocks.Gossip;
 import algo.algorithm.distributed.LamportClocks.LamportNode;
-import algo.algorithm.distributed.gossip.AbstractGossip;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
