@@ -4,7 +4,7 @@ out
 *.ipr
 *.iws
 .gradle
-build
 gradle
 gradlew
 gradlew.bat
+bazel-*
