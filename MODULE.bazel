@@ -1,0 +1,40 @@
+module(
+    name = "algo_trend",
+    version = "0.1.0",
+)
+
+bazel_dep(name = "rules_jvm_external", version = "5.3")  # or latest
+bazel_dep(name = "rules_go", version = "0.40.0")  # newer than v0.20.1
+
+# Activate the Maven extension
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+# Add dependencies here instead of jvm_maven_import_external
+maven.install(
+    artifacts = [
+        "com.google.guava:guava:26.0-jre",
+
+        # JUnit Jupiter
+        "org.junit.jupiter:junit-jupiter-api:5.7.1",
+        "org.junit.jupiter:junit-jupiter-engine:5.7.1",
+        "org.junit.jupiter:junit-jupiter-params:5.7.1",
+
+        # JUnit Platform
+        "org.junit.platform:junit-platform-commons:1.7.1",
+        "org.junit.platform:junit-platform-console:1.7.1",
+        "org.junit.platform:junit-platform-engine:1.7.1",
+        "org.junit.platform:junit-platform-launcher:1.7.1",
+        "org.junit.platform:junit-platform-suite-api:1.7.1",
+
+        # Extra deps
+        "org.apiguardian:apiguardian-api:1.0.0",
+        "org.opentest4j:opentest4j:1.1.1",
+    ],
+    fetch_sources = True,
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ],
+)
+
+# This line is crucial - it makes the maven repository visible to your BUILD files
+use_repo(maven, "maven")
