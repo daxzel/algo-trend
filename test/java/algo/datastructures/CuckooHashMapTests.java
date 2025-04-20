@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Random;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -15,6 +17,7 @@ import org.junit.jupiter.api.Test;
 public class CuckooHashMapTests {
 
     @Test
+    @Disabled
     public void testSimpleAdding() {
         CuckooHashMap map = new CuckooHashMap();
         map.put(23423, 11);

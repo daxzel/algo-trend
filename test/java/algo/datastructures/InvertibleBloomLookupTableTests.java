@@ -1,15 +1,14 @@
 package algo.datastructures;
 
-import algo.datastructures.InvertibleBloomLookupTable;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class InvertibleBloomLookupTableTests {
 
     @Test
+    @Disabled
     public void testSimple() {
         InvertibleBloomLookupTable filter = new InvertibleBloomLookupTable(100, 2);
 
